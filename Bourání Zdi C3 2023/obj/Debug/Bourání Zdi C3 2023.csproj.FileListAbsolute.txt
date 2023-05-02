@@ -1,0 +1,21 @@
+C:\Users\benesmartin\source\repos\Bourání Zdi C3 2023\Bourání Zdi C3 2023\bin\Debug\Bourání Zdi C3 2023.exe.config
+C:\Users\benesmartin\source\repos\Bourání Zdi C3 2023\Bourání Zdi C3 2023\bin\Debug\Bourání Zdi C3 2023.exe
+C:\Users\benesmartin\source\repos\Bourání Zdi C3 2023\Bourání Zdi C3 2023\bin\Debug\Bourání Zdi C3 2023.pdb
+C:\Users\benesmartin\source\repos\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.csprojAssemblyReference.cache
+C:\Users\benesmartin\source\repos\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání_Zdi_C3_2023.Form1.resources
+C:\Users\benesmartin\source\repos\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání_Zdi_C3_2023.Properties.Resources.resources
+C:\Users\benesmartin\source\repos\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.csproj.GenerateResource.cache
+C:\Users\benesmartin\source\repos\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.csproj.CoreCompileInputs.cache
+C:\Users\benesmartin\source\repos\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.exe
+C:\Users\benesmartin\source\repos\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.pdb
+D:\Bourání Zdi C3 2023\Bourání Zdi C3 2023\bin\Debug\Bourání Zdi C3 2023.exe.config
+D:\Bourání Zdi C3 2023\Bourání Zdi C3 2023\bin\Debug\Bourání Zdi C3 2023.exe
+D:\Bourání Zdi C3 2023\Bourání Zdi C3 2023\bin\Debug\Bourání Zdi C3 2023.pdb
+D:\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání_Zdi_C3_2023.Form1.resources
+D:\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání_Zdi_C3_2023.Properties.Resources.resources
+D:\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.csproj.GenerateResource.cache
+D:\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.csproj.CoreCompileInputs.cache
+D:\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.exe
+D:\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.pdb
+D:\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.csproj.AssemblyReference.cache
+D:\Bourání Zdi C3 2023\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.csproj.SuggestedBindingRedirects.cache
