@@ -26,7 +26,10 @@ namespace Bourání_Zdi_C3_2023
         clsCihla [] mobjCihla;
         const int mintSirkaCihly = 80, mintVyskaCihly = 20;
         const int mintVelikostMezery = 20, mintPocetRadCihel = 3;
-        
+
+        // zobrazení vozicku
+        //const int mintSirkaVozicku = 60, mintVyskaVozicku = 20;
+
         // rychlost timeru
         const int mintRychlostTimeru = 10;
 
@@ -81,9 +84,15 @@ namespace Bourání_Zdi_C3_2023
             // pohyb kulicky
             mobjKulicka.Pohyb();
 
-			//vykreslení všech cihel
-			//for (int i = 0; i < mintPocetCihel; i++) ... {mobjCihla[i].NakresliSe();}
-			foreach (clsCihla objCihla in mobjCihla)
+            // test kolize všech cihel
+            foreach (clsCihla objCihla in mobjCihla)
+            {
+                objCihla.TestKolize(mobjKulicka.intXK, mobjKulicka.intYK, mobjKulicka.intWK, mobjKulicka.intHK);
+            }
+
+            //vykreslení všech cihel
+            //for (int i = 0; i < mintPocetCihel; i++) ... {mobjCihla[i].NakresliSe();}
+            foreach (clsCihla objCihla in mobjCihla)
             {
 				objCihla.NakresliSe();
             }

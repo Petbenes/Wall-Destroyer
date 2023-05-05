@@ -41,6 +41,15 @@ namespace Bourání_Zdi_C3_2023
             mintPohybY = mintRychlostPosunu;
         }
 
+        // načtení hodnot souřadnic kuličky
+        public int intXK
+        {
+            get { return mintXKulicky; }
+        }
+        public int intYK { get { return mintYKulicky; } }
+        public int intWK { get { return mintRKulicky; } }
+        public int intHK { get { return mintRKulicky; } }
+
         //------------------------------------------------
         // pohyb kulicky po plátně
         //------------------------------------------------

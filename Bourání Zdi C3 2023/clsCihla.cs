@@ -24,6 +24,7 @@ namespace Bourání_Zdi_C3_2023
 		// proměnná cihly
 		int mintXCihly, mintYCihly;
 		int mintVyskaCihly, mintSirkaCihly;
+		bool mblJeVidet;
 
 		//------------------------------------------------
 		// konstruktor
@@ -36,14 +37,44 @@ namespace Bourání_Zdi_C3_2023
 			mintYCihly = intYCihly;
 			mintVyskaCihly = intVyskaCihly;
 			mintSirkaCihly = intSirkaCihly;
-		}
+			mblJeVidet = true;
+
+        }
 		//------------------------------------------------
 		// vykreslení cihly
 		//------------------------------------------------
 
 		public void NakresliSe()
 		{
+			// test viditelnosti cihly
+			if (mblJeVidet == false) return;
+
+			// vykreslení cihly
 			mobjGrafika.FillRectangle(Brushes.Orange, mintXCihly, mintYCihly, mintSirkaCihly, mintVyskaCihly);
 		}
-	}
+
+        //------------------------------------------------
+        // test kolize cihly s kulickou
+		// - vrací true pokud došlo ke kolizi
+        //------------------------------------------------
+
+        public bool TestKolize(int intXK, int intYK, int intWK, int intHK)
+        {
+			// test viditelnosti cihly
+			if (mblJeVidet == false) return false;
+
+			// test kolize
+			if (mintXCihly == intXK && mintYCihly == intYK && mintSirkaCihly == intWK && mintVyskaCihly == intHK)
+			{
+				// cihla už není vidět
+				mblJeVidet = false;
+				return true;
+			}
+			else
+            {
+                // nedošlo ke kolizi
+                return false;
+            }
+        }
+    }
 }
