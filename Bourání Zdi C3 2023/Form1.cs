@@ -18,17 +18,22 @@ namespace Bourání_Zdi_C3_2023
         // grafika pro kreslení
         Graphics mobjGrafika;
 
-        // třída kulicky
+        // třída a proměnná kulicky
         clsKulicka mobjKulicka;
+        int mintPohybX, mintPohybY;
 
-        //třída vozicku
+        // třída vozicku
         clsVozicek mobjVozicek;
 
-        // vozicek
+        // zobrazení vozicku
         int mintXVozicku;
         int mintYVozicku;
-        const int mintVyskaVozicku = 60;
+        const int mintVyskaVozicku = 70;
         const int mintSirkaVozicku = 20;
+
+        // ovladani
+        bool goLeft;
+        bool goRight;
 
         // pole cihel
         int mintPocetCihel;
@@ -36,10 +41,31 @@ namespace Bourání_Zdi_C3_2023
         const int mintSirkaCihly = 80, mintVyskaCihly = 20;
         const int mintVelikostMezery = 20, mintPocetRadCihel = 3;
 
-        // zobrazení vozicku
-
         // rychlost timeru
         const int mintRychlostTimeru = 10;
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left)
+            {
+                goLeft = true;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                goRight = true;
+            }
+        }
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left)
+            {
+                goLeft = false;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                goRight = false;
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -59,9 +85,9 @@ namespace Bourání_Zdi_C3_2023
             mobjKulicka = new clsKulicka(mobjGrafika);
 
             // vytvoření vozicku
+            int mintXVozicku = pbPlatno.Width/2;
+            int mintYVozicku = pbPlatno.Height - 50;
             mobjVozicek = new clsVozicek(mobjGrafika, mintXVozicku, mintYVozicku, mintVyskaVozicku, mintSirkaVozicku);
-            mintXVozicku = 1 / 2 * pbPlatno.Width;
-            mintYVozicku = 9 / 10 * pbPlatno.Height;
 
             // vytvoreni pole
             mintPocetCihel = mintPocetRadCihel *
@@ -74,17 +100,17 @@ namespace Bourání_Zdi_C3_2023
             lintX = lintY = mintVelikostMezery;
             for (int i = 0; i < mintPocetCihel; i++)
             {
-				//test změna souřadnic
+				// test změna souřadnic
 				if ((lintX  + mintSirkaCihly + mintVelikostMezery) > (pbPlatno.Width))
 				{
 					lintX = mintVelikostMezery;
 					lintY = lintY + mintVelikostMezery + mintVyskaCihly;
 				}
 
-				//init jedné cihly
+				// init jedné cihly
 				mobjCihla[i] = new clsCihla(mobjGrafika, lintX, lintY, mintSirkaCihly, mintVyskaCihly);
 
-                //finální změna souřadnic
+                // finální změna souřadnic
                 lintX = lintX + mintSirkaCihly + mintVelikostMezery;
             }
         }
@@ -100,18 +126,39 @@ namespace Bourání_Zdi_C3_2023
             // pohyb kulicky
             mobjKulicka.Pohyb();
 
-            // test kolize všech cihel
-            foreach (clsCihla objCihla in mobjCihla)
+            // test kolize vozicku
+            mobjVozicek.TestKolize(mobjKulicka.intXK, mobjKulicka.intYK, mobjKulicka.intWK, mobjKulicka.intHK);
+            if (mobjVozicek.mblOdrazVozicku == true)
             {
-                objCihla.TestKolize(mobjKulicka.intXK, mobjKulicka.intYK, mobjKulicka.intWK, mobjKulicka.intHK);
+                mobjKulicka.mintPohybY = -mobjKulicka.mintPohybY;
+                mobjVozicek.mblOdrazVozicku = false;
             }
 
-            //vykreslení všech cihel
-            //for (int i = 0; i < mintPocetCihel; i++) ... {mobjCihla[i].NakresliSe();}
+                // test kolize všech cihel
+                foreach (clsCihla objCihla in mobjCihla)
+            {
+               objCihla.TestKolize(mobjKulicka.intXK, mobjKulicka.intYK, mobjKulicka.intWK, mobjKulicka.intHK);
+               if (objCihla.mblOdrazCihly == true)
+                {
+                    mobjKulicka.mintPohybY = -mobjKulicka.mintPohybY;
+                    objCihla.mblOdrazCihly = false;
+                }
+            }
+
+            // vykreslení všech cihel
             foreach (clsCihla objCihla in mobjCihla)
             {
 				objCihla.NakresliSe();
             }
-		}
+
+            // podmínky prohry
+            if (mobjKulicka.intYK > pbPlatno.Height - 20)
+            {
+                tmrPrekresli.Stop();
+                MessageBox.Show("Game Over");
+                this.Close();
+            }
+            // podmínky výhry
+        }
     }
 }

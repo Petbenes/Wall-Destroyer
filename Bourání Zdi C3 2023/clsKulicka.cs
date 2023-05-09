@@ -23,7 +23,7 @@ namespace Bourání_Zdi_C3_2023
 
         // proměnná kuličky
         int mintXKulicky, mintYKulicky;
-        int mintPohybX, mintPohybY;
+        public int mintPohybX, mintPohybY;
         const int mintRKulicky = 15;
         const int mintRychlostPosunu = 3;
 
@@ -71,6 +71,5 @@ namespace Bourání_Zdi_C3_2023
                 (mintXKulicky < 0))
                 mintPohybX = mintPohybX * (-1);
         }
-
     }
 }

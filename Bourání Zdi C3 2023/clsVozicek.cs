@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Bourání_Zdi_C3_2023
 {
@@ -24,6 +25,9 @@ namespace Bourání_Zdi_C3_2023
         // proměnná vozicku
         int mintXVozicku, mintYVozicku;
         int mintVyskaVozicku, mintSirkaVozicku;
+        const int mintRychlostVozicku = 4;
+        public int mintPohybXVozicku;
+        public bool mblOdrazVozicku;
 
         //------------------------------------------------
         // konstruktor
@@ -35,6 +39,7 @@ namespace Bourání_Zdi_C3_2023
             mintYVozicku = intYVozicku;
             mintVyskaVozicku = intVyskaVozicku;
             mintSirkaVozicku = intSirkaVozicku;
+            mintPohybXVozicku = mintRychlostVozicku;
         }
 
         //------------------------------------------------
@@ -44,6 +49,30 @@ namespace Bourání_Zdi_C3_2023
         {
             // vykreslení vozicku
             mobjGrafika.FillRectangle(Brushes.Black, mintXVozicku, mintYVozicku, mintSirkaVozicku, mintVyskaVozicku);
+
+            // posun
+            mintXVozicku += mintPohybXVozicku;
+
+            // test kolize na hranách
+            if (((mintXVozicku + mintSirkaVozicku + mintVyskaVozicku) > mobjGrafika.VisibleClipBounds.Width) ||
+                (mintXVozicku < 0))
+                mintPohybXVozicku = -mintPohybXVozicku;
+        }
+        public bool TestKolize(int intXK, int intYK, int intWK, int intHK)
+        {
+            Rectangle rcKulicka = new Rectangle(intXK, intYK, intWK, intHK);
+            Rectangle rcVozicek = new Rectangle(mintXVozicku, mintYVozicku, mintSirkaVozicku, mintVyskaVozicku);
+
+            if (rcKulicka.IntersectsWith(rcVozicek))
+            {
+                mblOdrazVozicku = true;
+                return true;
+            }
+            else
+            {
+                // nedošlo ke kolizi
+                return false;
+            }
         }
     }
 }

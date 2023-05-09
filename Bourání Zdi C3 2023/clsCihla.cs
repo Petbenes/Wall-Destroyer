@@ -26,6 +26,7 @@ namespace Bourání_Zdi_C3_2023
 		int mintXCihly, mintYCihly;
 		int mintVyskaCihly, mintSirkaCihly;
 		bool mblJeVidet;
+		public bool mblOdrazCihly;
 
 		//------------------------------------------------
 		// konstruktor
@@ -69,6 +70,7 @@ namespace Bourání_Zdi_C3_2023
 
             if (rcKulicka.IntersectsWith(rcCihla))
             {
+                mblOdrazCihly = true;
                 mblJeVidet = false; 
 				return true;
             }
