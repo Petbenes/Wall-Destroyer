@@ -9,6 +9,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -53,28 +54,29 @@ namespace Bourání_Zdi_C3_2023
 			mobjGrafika.FillRectangle(Brushes.Orange, mintXCihly, mintYCihly, mintSirkaCihly, mintVyskaCihly);
 		}
 
-        //------------------------------------------------
-        // test kolize cihly s kulickou
+		//------------------------------------------------
+		// test kolize cihly s kulickou
 		// - vrací true pokud došlo ke kolizi
-        //------------------------------------------------
+		//------------------------------------------------
 
-        public bool TestKolize(int intXK, int intYK, int intWK, int intHK)
-        {
+		public bool TestKolize(int intXK, int intYK, int intWK, int intHK)
+		{
 			// test viditelnosti cihly
 			if (mblJeVidet == false) return false;
 
-			// test kolize
-			if (mintXCihly == intXK && mintYCihly == intYK && mintSirkaCihly == intWK && mintVyskaCihly == intHK)
-			{
-				// cihla už není vidět
-				mblJeVidet = false;
-				return true;
-			}
-			else
+            Rectangle rcKulicka = new Rectangle(intXK, intYK, intWK, intHK);
+            Rectangle rcCihla = new Rectangle(mintXCihly, mintYCihly, mintSirkaCihly, mintVyskaCihly);
+
+            if (rcKulicka.IntersectsWith(rcCihla))
             {
-                // nedošlo ke kolizi
-                return false;
+                mblJeVidet = false; 
+				return true;
             }
+            else
+			{
+				// nedošlo ke kolizi
+				return false;
+			}
         }
     }
 }

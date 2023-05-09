@@ -21,6 +21,15 @@ namespace Bourání_Zdi_C3_2023
         // třída kulicky
         clsKulicka mobjKulicka;
 
+        //třída vozicku
+        clsVozicek mobjVozicek;
+
+        // vozicek
+        int mintXVozicku;
+        int mintYVozicku;
+        const int mintVyskaVozicku = 60;
+        const int mintSirkaVozicku = 20;
+
         // pole cihel
         int mintPocetCihel;
         clsCihla [] mobjCihla;
@@ -28,7 +37,6 @@ namespace Bourání_Zdi_C3_2023
         const int mintVelikostMezery = 20, mintPocetRadCihel = 3;
 
         // zobrazení vozicku
-        //const int mintSirkaVozicku = 60, mintVyskaVozicku = 20;
 
         // rychlost timeru
         const int mintRychlostTimeru = 10;
@@ -49,6 +57,11 @@ namespace Bourání_Zdi_C3_2023
 
             // vytvoření kulicky
             mobjKulicka = new clsKulicka(mobjGrafika);
+
+            // vytvoření vozicku
+            mobjVozicek = new clsVozicek(mobjGrafika, mintXVozicku, mintYVozicku, mintVyskaVozicku, mintSirkaVozicku);
+            mintXVozicku = 1 / 2 * pbPlatno.Width;
+            mintYVozicku = 9 / 10 * pbPlatno.Height;
 
             // vytvoreni pole
             mintPocetCihel = mintPocetRadCihel *
@@ -80,6 +93,9 @@ namespace Bourání_Zdi_C3_2023
         {
             // smazání scény
             mobjGrafika.Clear(Color.White);
+
+            // obnovení vozicku
+            mobjVozicek.NakresliSe();
 
             // pohyb kulicky
             mobjKulicka.Pohyb();
