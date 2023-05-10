@@ -40,6 +40,7 @@ namespace Bourání_Zdi_C3_2023
         clsCihla [] mobjCihla;
         const int mintSirkaCihly = 80, mintVyskaCihly = 20;
         const int mintVelikostMezery = 20, mintPocetRadCihel = 3;
+        int mintZniceneCihly = 0;
 
         // rychlost timeru
         const int mintRychlostTimeru = 10;
@@ -126,6 +127,16 @@ namespace Bourání_Zdi_C3_2023
             // pohyb kulicky
             mobjKulicka.Pohyb();
 
+            // pohyb vozicku
+            if (goLeft == true)
+            {
+                mobjVozicek.mintPohybXVozicku = mobjVozicek.mintPohybXVozicku - 1;
+            }
+            if (goRight == true)
+            {
+                mobjVozicek.mintPohybXVozicku = mobjVozicek.mintPohybXVozicku + 1;
+            }
+
             // test kolize vozicku
             mobjVozicek.TestKolize(mobjKulicka.intXK, mobjKulicka.intYK, mobjKulicka.intWK, mobjKulicka.intHK);
             if (mobjVozicek.mblOdrazVozicku == true)
@@ -140,6 +151,7 @@ namespace Bourání_Zdi_C3_2023
                objCihla.TestKolize(mobjKulicka.intXK, mobjKulicka.intYK, mobjKulicka.intWK, mobjKulicka.intHK);
                if (objCihla.mblOdrazCihly == true)
                 {
+                    mintZniceneCihly++;
                     mobjKulicka.mintPohybY = -mobjKulicka.mintPohybY;
                     objCihla.mblOdrazCihly = false;
                 }
@@ -159,6 +171,12 @@ namespace Bourání_Zdi_C3_2023
                 this.Close();
             }
             // podmínky výhry
+            if (mintZniceneCihly == mintPocetCihel)
+            {
+                tmrPrekresli.Stop();
+                MessageBox.Show("GG");
+                this.Close();
+            }
         }
     }
 }

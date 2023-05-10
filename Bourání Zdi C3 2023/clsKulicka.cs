@@ -25,7 +25,7 @@ namespace Bourání_Zdi_C3_2023
         int mintXKulicky, mintYKulicky;
         public int mintPohybX, mintPohybY;
         const int mintRKulicky = 15;
-        const int mintRychlostPosunu = 3;
+        const int mintRychlostPosunu = 2;
 
         //------------------------------------------------
         // konstruktor

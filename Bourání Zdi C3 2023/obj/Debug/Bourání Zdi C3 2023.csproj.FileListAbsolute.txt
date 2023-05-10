@@ -30,3 +30,14 @@ C:\Users\micha\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\obj\Debug\Bour�
 C:\Users\micha\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.csproj.CoreCompileInputs.cache
 C:\Users\micha\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.exe
 C:\Users\micha\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.pdb
+C:\Users\benesmartin\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\bin\Debug\Bourání Zdi C3 2023.exe.config
+C:\Users\benesmartin\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\bin\Debug\Bourání Zdi C3 2023.exe
+C:\Users\benesmartin\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\bin\Debug\Bourání Zdi C3 2023.pdb
+C:\Users\benesmartin\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.csproj.AssemblyReference.cache
+C:\Users\benesmartin\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.csproj.SuggestedBindingRedirects.cache
+C:\Users\benesmartin\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\obj\Debug\Bourání_Zdi_C3_2023.Form1.resources
+C:\Users\benesmartin\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\obj\Debug\Bourání_Zdi_C3_2023.Properties.Resources.resources
+C:\Users\benesmartin\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.csproj.GenerateResource.cache
+C:\Users\benesmartin\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.csproj.CoreCompileInputs.cache
+C:\Users\benesmartin\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.exe
+C:\Users\benesmartin\Source\Repos\Wall-Destroyer\Bourání Zdi C3 2023\obj\Debug\Bourání Zdi C3 2023.pdb

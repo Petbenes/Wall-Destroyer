@@ -25,7 +25,7 @@ namespace Bourání_Zdi_C3_2023
         // proměnná vozicku
         int mintXVozicku, mintYVozicku;
         int mintVyskaVozicku, mintSirkaVozicku;
-        const int mintRychlostVozicku = 4;
+        const int mintRychlostVozicku = 2;
         public int mintPohybXVozicku;
         public bool mblOdrazVozicku;
 
@@ -58,6 +58,10 @@ namespace Bourání_Zdi_C3_2023
                 (mintXVozicku < 0))
                 mintPohybXVozicku = -mintPohybXVozicku;
         }
+
+        //------------------------------------------------
+        // test kolize vozicku s kulickou
+        //------------------------------------------------
         public bool TestKolize(int intXK, int intYK, int intWK, int intHK)
         {
             Rectangle rcKulicka = new Rectangle(intXK, intYK, intWK, intHK);
